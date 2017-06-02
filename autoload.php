@@ -9,6 +9,7 @@
   /* autoload libraries*/
 	$loadsDir = array (
 		'./markdown/Parser.php',
+		'./markdown/block/CodeTrait.php',
     './markdown/block/',
     './markdown/inline/',
 		'./markdown/Markdown.php',
@@ -33,7 +34,7 @@
 					} else if (is_file($dir)){
 						if ($debug)
 							echo 'Load: ' . $dir . '<br>';
-						require_once($dir);
+						include_once($dir);
 						continue;
 					}
 					die('Error loading dir: ' . $dir);

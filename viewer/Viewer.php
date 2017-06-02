@@ -1,4 +1,4 @@
-<?
+<?php
   /**
    * Github/Bitbucket Wiki Smarty HTML Viewer
    **/
@@ -97,7 +97,7 @@
      **/
     private function set_html_footer(){
       //set js scripts at end
-      $html .= '';
+      $html = '';
       
       return "\n</body></html>";
     }
