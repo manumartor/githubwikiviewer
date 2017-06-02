@@ -1,0 +1,48 @@
+/* File: css/viewer.css v.1.0.0 */
+/*
+ * Github/Bitbucket Wiki Smarty HTML browser viewer CSS
+ *
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#E4E4E4;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    width:100%;
+}
+
+#header{
+  padding: 5px;
+  text-align: right;
+  
+  /*background-color: green;*/
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(49,140,18,0.57);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(49,140,18,0.57);
+  box-shadow: 5px 5px 5px 0px rgba(49,140,18,0.57);
+}
+#header a{
+  margin-left: 5px;
+}
+
+#main{
+  margin: 10px 0;
+  padding: 5px;
+}
+
+#footer{
+  padding: 5px;
+  text-align: center;
+  
+  -webkit-box-shadow: -5px -5px 5px 0px rgba(49,140,18,0.57);
+  -moz-box-shadow: -5px -5px 5px 0px rgba(49,140,18,0.57);
+  box-shadow: -5px -5px 5px 0px rgba(49,140,18,0.57);
+}
