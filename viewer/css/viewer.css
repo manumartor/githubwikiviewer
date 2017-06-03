@@ -33,6 +33,16 @@ a:hover{
 p{
   margin: 10px 10px;
 }
+pre{
+  margin: 10px 10px;
+  padding: 5px;
+  background-color: rgba(49, 140, 18, 0.1);
+  border: 1px solid rgba(49,140,18,0.57);
+  border-radius: 5px;
+}
+strong, em{
+  color: rgba(49, 140, 18, 0.9);
+}
 
 #header{
   padding: 5px;

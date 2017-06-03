@@ -32,7 +32,7 @@
 			if (isset($_GET['f'])){
 				$file = dirname($file) . '/' . $_GET['f'];
 			}
-      //check file exists
+      //check if file exists
       if (!is_file($file)){
 			  die('Error parsing file: ' . $file);
 		  }
