@@ -1,10 +1,13 @@
 <?php 
 	/**
 	 * Github/Bitbucket Wiki Smarty HTML browser autolad
+	 *
+	 * @version: 1.0.0
 	 **/
 
 	/* initialize config */
-	define('DEBUG', false);
+	define('DEBUG', true);
+	ob_start();
 
   /* autoload libraries*/
 	$loadsDir = array (
@@ -24,7 +27,7 @@
 							while (false !== ($entrada = readdir($gestor))) {
 								  if ($entrada == '.' || $entrada == '..') continue;
 									if ($debug)
-									  echo 'Load: ' . $dir . $entrada . '<br>';
+									  echo 'Load lib: ' . $dir . $entrada . '<br>';
 									require_once($dir . $entrada);
 							}
 							closedir($gestor);
@@ -33,7 +36,7 @@
 						die('Error iterating over dir: ' . $dir);
 					} else if (is_file($dir)){
 						if ($debug)
-							echo 'Load: ' . $dir . '<br>';
+							echo 'Load lib: ' . $dir . '<br>';
 						include_once($dir);
 						continue;
 					}

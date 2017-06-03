@@ -19,6 +19,20 @@ body {
     height:100%;
     width:100%;
 }
+h1, h2, h3, h4{
+  margin: 10px 5px; 
+  color: rgba(49, 140, 18, 0.9);
+}
+a{
+  color: rgba(49, 140, 18, 0.9);
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
+}
+p{
+  margin: 10px 10px;
+}
 
 #header{
   padding: 5px;
@@ -29,13 +43,58 @@ body {
   -moz-box-shadow: 5px 5px 5px 0px rgba(49,140,18,0.57);
   box-shadow: 5px 5px 5px 0px rgba(49,140,18,0.57);
 }
-#header a{
-  margin-left: 5px;
+#header a, #header i{
+  margin: 0 5px;
 }
 
 #main{
   margin: 10px 0;
   padding: 5px;
+}
+#mainIndex, #mainAllWikiPages{
+  position: absolute;
+  display: none;
+  top: 50px;
+  right: 10px;
+  min-width: 250px;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid rgba(49,140,18,0.57);
+  border-radius: 5px;
+}
+#mainAllWikiPages a{
+  
+}
+#mainHTML{
+  
+}
+#mainTXT{
+  display: none;
+  word-wrap: break-word;
+}
+#debug{
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(49, 140, 18, 0.1);
+  z-index: 2;
+}
+#debug_content{
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 85%;
+  height: 85%;
+  padding: 15px 10px;
+  background-color: #ffffff;
+  border: 1px solid rgba(49,140,18,0.57);
+  border-radius: 25px;
+  z-index: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 #footer{
