@@ -6,7 +6,7 @@
 	 **/
 
 	/* initialize config */
-	define('DEBUG', true);
+	define('DEBUG', false);
 	ob_start();
 
   /* autoload libraries*/

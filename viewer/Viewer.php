@@ -42,7 +42,8 @@
       $parser = new \cebe\markdown\GithubMarkdown();
       $txt_content = $this->load_txt($file);
   	  $html_content = $parser->parse($txt_content);
-			echo 'Parsed txt content to html<br>';
+			if ($this->debug)
+				echo 'Parsed txt content to html<br>';
       
       //get page name
       $this->current_page_name = $this->get_page_name($file);
@@ -70,7 +71,8 @@
 			$html .= '<div id="mainTXT"><pre>' . $txt_content . '</pre></div>';
 			$html .= $this->get_all_wiki_pages($filename);
 		
-			echo 'Setted viewer content<br>';
+			if ($this->debug)
+				echo 'Setted viewer content<br>';
 			return $html . "</div>\n";
 		}
     
@@ -86,7 +88,8 @@
       $html .= '<i id="swich_html2txt" title="Switch to txt mode" class="fa fa-file-code-o fa-2x fa-border"></i>';
       $html .= '</div>';
       
-			echo 'Setted viewer header<br>';
+			if ($this->debug)
+				echo 'Setted viewer header<br>';
       return $html . "\n";
     }
     
@@ -97,7 +100,8 @@
       $html = '<div id="footer">' . $this->html_title . ' - ' . $this->current_page_name;
       $html .= ' &middot; Copyright ' . date('Y');
 			
-			echo 'Setted viewer footer<br>';
+			if ($this->debug)
+				echo 'Setted viewer footer<br>';
       return $html . '</div>';
     }
     
@@ -121,7 +125,8 @@
 				//'<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">' . //google icons
 				"\n";
       
-			echo 'Setted html header<br>';
+			if ($this->debug)
+				echo 'Setted html header<br>';
       return $html . "</head><body>\n";
     }
     
@@ -132,7 +137,8 @@
       //set js scripts at end
       $html = '';
       
-			echo 'Setted html footer<br>';
+			if ($this->debug)
+				echo 'Setted html footer<br>';
       return "\n</body></html>";
     }
     
@@ -145,7 +151,8 @@
 			  die('Error reading file: ' . $file);
 		  }
       
-			echo 'Loaded txt content<br>';
+			if ($this->debug)
+				echo 'Loaded txt content<br>';
 		  return file_get_contents($file);
     }
     
@@ -166,7 +173,8 @@
       $file_name = explode('.', $file_name);
       unset($file_name[count($file_name) - 1]);
       
-			echo 'Getted page name<br>';
+			if ($this->debug)
+				echo 'Getted page name<br>';
       return implode('.', $file_name);
     }
 		
@@ -201,7 +209,8 @@
 			}
 			$html .= '</div>';
 			
-			echo 'Setted current page index<br>';
+			if ($this->debug)
+				echo 'Setted current page index<br>';
 			return $html;
 		}
 		
@@ -241,7 +250,8 @@
      **/
     private function get_all_wiki_pages($filename){
 			$dir = dirname($filename);
-			echo 'All wiki pages list from dir: ' . $dir . '<br>';
+			if ($this->debug)
+				echo 'All wiki pages list from dir: ' . $dir . '<br>';
 			
 			$html = '<div id="mainAllWikiPages">';
 			if (is_dir($dir)){
@@ -264,12 +274,14 @@
 			}
 			$html .= '</div>';
 			
-			echo 'Setted all wikis pages list<br>';
+			if ($this->debug)
+				echo 'Setted all wikis pages list<br>';
 			return $html;
 		}
 		
 		private function get_debug_info(){
-			echo 'Getted debug info<br>';
+			if ($this->debug)
+				echo 'Getted debug info<br>';
 			$debug_info = ob_get_flush();
 			ob_end_clean();
 			return '<div id="debug"><div id="debug_content">' .$debug_info . '</div></div>';
