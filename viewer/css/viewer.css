@@ -23,6 +23,7 @@ h1, h2, h3, h4{
   margin: 10px 5px; 
   color: rgba(49, 140, 18, 0.9);
 }
+
 a{
   color: rgba(49, 140, 18, 0.9);
   text-decoration: none;
@@ -55,6 +56,13 @@ strong, em{
 }
 #header a, #header i{
   margin: 0 5px;
+}
+
+.icon_border{
+  border-color: rgb(238, 238, 238);
+}
+.icon_border_selected{
+  border-color: rgba(49, 140, 18, 0.57) !important;
 }
 
 #main{
@@ -114,4 +122,32 @@ strong, em{
   -webkit-box-shadow: -5px -5px 5px 0px rgba(49,140,18,0.57);
   -moz-box-shadow: -5px -5px 5px 0px rgba(49,140,18,0.57);
   box-shadow: -5px -5px 5px 0px rgba(49,140,18,0.57);
+}
+
+/* orange customization */
+.orange h1, h2, h3, h4, .orange a, .orange strong, em{
+  color: rgba(216, 75, 44, 0.9);  
+}
+.orange pre{
+  background-color: rgba(216, 75, 44, 0.1);
+  border: 1px solid rgba(216, 75, 44, 0.57);
+}
+.orange #header{
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(216, 75, 44, 0.57);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(216, 75, 44, 0.57);
+  box-shadow: 5px 5px 5px 0px rgba(216, 75, 44, 0.57);
+}
+.orange .icon_border_selected{
+  border-color: rgba(216, 75, 44, 0.57) !important;
+}
+.orange #mainIndex, .orange #mainAllWikiPages, .orange #debug_content{
+  border: 1px solid rgba(216, 75, 44, 0.57);
+}
+.orange #debug{
+  background-color: rgba(216, 75, 44, 0.1);
+}
+.orange #footer{
+  -webkit-box-shadow: -5px -5px 5px 0px rgba(216, 75, 44, 0.57);
+  -moz-box-shadow: -5px -5px 5px 0px rgba(216, 75, 44, 0.57);
+  box-shadow: -5px -5px 5px 0px rgba(216, 75, 44, 0.57);
 }

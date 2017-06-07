@@ -28,9 +28,9 @@ function showAllWikiPages(){
 function toggleLayout(layout, icon){
   $(layout).fadeToggle("slow", function(){
     if ($(layout).css('display') != 'none'){
-      $(icon).css('border-color', 'rgba(49,140,18,0.57)');
+      $(icon).addClass('icon_border_selected');
     }else {
-      $(icon).css('border-color', 'rgb(238, 238, 238)');
+      $(icon).removeClass('icon_border_selected');
     }
   });
 }
@@ -58,12 +58,12 @@ function switchHtmlToTxt(){
   if ($('#mainTXT').css('display') == 'none'){
     $('#mainHTML').fadeToggle("slow", function(){
       $('#mainTXT').fadeToggle("slow");
-      $('#swich_html2txt').css('border-color', 'rgba(49,140,18,0.57)');
+      $('#swich_html2txt').addClass('icon_border_selected');;
     });
   } else {
     $('#mainTXT').fadeToggle("slow", function(){
       $('#mainHTML').fadeToggle("slow");
-      $('#swich_html2txt').css('border-color', 'rgb(238, 238, 238)');
+      $('#swich_html2txt').removeClass('icon_border_selected');;
     });
   }
 }

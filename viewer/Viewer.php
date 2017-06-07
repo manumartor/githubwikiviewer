@@ -7,18 +7,37 @@
   class Viewer {
     
     //initilize properties
+		private $cfg = null;
+		private $css_color = 'green';
     private $debug = false;
     private $html_title = 'WuiWui Wiki';
     private $current_page_name = 'Home';
     
     //class constructor
     public function __construct($debug = false){
-      //set debug mode
-      if (defined('DEBUG')){
-        $this->debug = DEBUG;
-      } else {
-        $this->debug = $debug;
-      }
+			// Load Custom Config
+			if (is_file('config.php')){
+				require_once('config.php');
+				//load title
+				if (isset($CFG->title)){
+					$this->html_title = $CFG->title;
+				}
+				//load css color
+				if (isset($CFG->css_color)){
+					$this->css_color = $CFG->css_color;
+				}
+			}
+			if (isset($CFG->debug)){
+				$this->debug = $CFG->debug;
+			} else {
+				//set debug mode
+				if (defined('DEBUG')){
+					$this->debug = DEBUG;
+				} else {
+					$this->debug = $debug;
+				}
+			}
+			
       if ($this->debug){
         echo 'Loading Viewer...<br>';
       }
@@ -127,7 +146,7 @@
       
 			if ($this->debug)
 				echo 'Setted html header<br>';
-      return $html . "</head><body>\n";
+      return $html . '</head><body class="' . $this->css_color . '">' . "\n";
     }
     
     /**
