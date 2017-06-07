@@ -125,7 +125,7 @@ strong, em{
 }
 
 /* orange customization */
-.orange h1, h2, h3, h4, .orange a, .orange strong, em{
+.orange h1, .orange h2, .orange h3, .orange h4, .orange a, .orange strong, .orange em{
   color: rgba(216, 75, 44, 0.9);  
 }
 .orange pre{
